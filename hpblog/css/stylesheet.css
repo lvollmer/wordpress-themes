@@ -1,0 +1,686 @@
+/**** variables **** */
+/**** global **** */
+* {
+  margin: 0;
+  padding: 0; }
+
+/**** typography **** */
+body {
+  color: #49413c;
+  font-family: freight-text-pro, "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+  font-size: medium; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 10px 0 5px 0; }
+
+h1 {
+  font-family: Museo-Sans, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 2.8em;
+  font-weight: 100;
+  line-height: 1em; }
+
+h2 {
+  font-size: 1.4em;
+  font-weight: 400;
+  margin: 10px 0 5px 0; }
+
+h3 {
+  font-size: 1.2em;
+  font-weight: 700; }
+
+p {
+  padding: 10px 0 5px 0; line-height: 1.7;}
+
+a {
+  color: #8dae32;
+  text-decoration: none;
+  transition: all 0.2s ease; }
+  a:hover {
+    color: #0074d9; }
+  a:active {
+    color: #0059a6; }
+
+ul, ol {
+  padding: 10px 0 5px 0; }
+  ul li, ol li {
+    margin: 0 0 0 40px; }
+
+/**** layout **** */
+body {
+  background: #f4f8e7;
+  width: 100%; }
+
+nav ul {
+  display: inline-block;
+  padding: 0;
+  margin: 0; }
+  nav ul li {
+    display: inline-block;
+    list-style-type: none; }
+
+.header-global {
+  background: #8dae32;
+  padding: 10px 10%;
+  width: 80%; }
+
+.logo {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20%; }
+
+.nav-main {
+  font-family: Museo-Sans, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 1.2em;
+  display: inline-block;
+  margin: 0 5%;
+  transition: all 0.2s ease;
+  vertical-align: middle; }
+  .nav-main a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.2s ease; }
+    .nav-main a:hover {
+      color: rgba(255, 255, 255, 0.5); }
+    .nav-main a:active {
+      color: rgba(255, 255, 255, 0.7); }
+  .nav-main ul {
+    margin: 0; }
+    .nav-main ul li {
+      margin: 0;
+      padding: 0 5px; }
+.nav-main ul li img, footer img{border:none;}
+      .nav-main ul li img:hover {
+        opacity: 0.5; }
+      .nav-main ul li img:active {
+        opacity: 0.8; }
+
+.searchbox {
+  display: inline-block;
+  float: right;
+  width: 30%;
+  vertical-align: middle; }
+  .searchbox input {
+	background: url("../images/search-icon.png") no-repeat scroll left center rgba(141, 174, 50, 0.2);
+    /*background: #8dae32;*/
+    border: none;
+    border-bottom: 3px solid white;
+    color: #7d9a2c;
+    float: right;
+    width: 80%; 
+	padding-left: 30px;
+	height: 30px;
+}
+    .searchbox input:focus {
+      background: white;
+      border: none;
+      outline: 0; 
+	  width: 90%;padding-left:0;}
+
+aside {
+  background: rgba(141, 174, 50, 0.6);
+  float: left;
+  position: absolute;
+   }
+
+.nav-category {
+  font-family: Museo-Sans, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  background: rgba(141, 174, 50, 0.8);
+  padding: 10px 10%;
+  width: 80%; }
+  .nav-category ul li {
+    margin: 0; }
+    .nav-category ul li a {
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      transition: all 0.2s ease; }
+
+a.cat-plan:hover, a.cat-plan.active {
+  background: #1063aa; }
+a.cat-plan:active {
+  background: #0c487b; }
+
+a.cat-food:hover, a.cat-food.active {
+  background: #fa4414; }
+a.cat-food:active {
+  background: #d63005; }
+
+a.cat-family:hover, a.cat-family.active {
+  background: #ffae00; }
+a.cat-family:active {
+  background: #cc8b00; }
+
+a.cat-entertain:hover, a.cat-entertain.active {
+  background: #eee809; }
+a.cat-entertain:active {
+  background: #bdb807; }
+
+a.cat-hp:hover, a.cat-hp.active {
+  background: #ace100; }
+a.cat-hp:active {
+  background: #85ae00; }
+
+a.cat-connected:hover,a.cat-connected.active {
+  background: #82158c; }
+a.cat-connected:active {
+  background: #590e60; }
+
+a.cat-life:hover, a.cat-life.active {
+  background: #f043a9; }
+a.cat-life:active {
+  background: #ec1493; }
+
+footer {
+  color: white;
+  font-family: Museo-Sans, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  margin-top: 100px;
+  text-align: center; }
+  footer .footer-text, footer .footer-nav {
+    margin: 0 auto;
+    padding: 10px 10%;
+    overflow: auto;
+    width: 80%; }
+    footer .footer-text ul, footer .footer-nav ul {
+      display: block;
+      padding: 10px 0;
+      margin: 0 auto; }
+      footer .footer-text ul li, footer .footer-nav ul li {
+        display: inline-block;
+        list-style-type: none;
+        margin: 0 2px;
+        padding: 0 10px; }
+        footer .footer-text ul li img:hover, footer .footer-nav ul li img:hover {
+          opacity: 0.5; }
+        footer .footer-text ul li img:active, footer .footer-nav ul li img:active {
+          opacity: 0.8; }
+    footer .footer-text a, footer .footer-nav a {
+      color: white; }
+      footer .footer-text a:hover, footer .footer-nav a:hover {
+        color: rgba(255, 255, 255, 0.5); }
+      footer .footer-text a:active, footer .footer-nav a:active {
+        color: rgba(255, 255, 255, 0.7); }
+  footer .footer-text {
+    background: rgba(141, 174, 50, 0.8); }
+  footer .footer-nav {
+    background: #8dae32;
+    padding-bottom: 30px; }
+
+/**** tiles **** */
+.tile article {
+  border: 1px solid #f4f8e7;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background: white;
+  transiton: all 0.2s ease;
+  overflow: auto; }
+  .tile article a:hover {
+    color: #f043a9; }
+  .tile article a:active {
+    color: white; }
+  .tile article header {
+    padding: 10px 10px 0 10px; }
+  .tile article:hover {
+    border: 1px solid rgba(141, 174, 50, 0.8); }
+  .tile article:active {
+    background: #fde8f5;
+    border: 1px solid #f043a9; }
+    .tile article:active a, .tile article:active h1, .tile article:active h2, .tile article:active p {
+      color: #f043a9; }
+  .tile article .body {
+    padding: 0 10px 10px 10px; }
+  .tile article .share {
+    display: none; }
+
+.papabear {
+  margin: 10px auto;
+  width: 80%; }
+  .papabear article {
+    margin: 10px auto;
+    overflow: auto; }
+    .papabear article img {
+      float: left;
+      padding-right: 2%;
+      width: 50%; }
+
+.mamabear {
+  clear: both;
+  font-size: small;
+  margin: 10px auto;
+  width: 60%; }
+  .mamabear article {
+    background: white;
+    margin: 10px auto; }
+    .mamabear article .byline {
+      font-size: 1.1em; }
+    .mamabear article img {
+      float: left;
+      padding-right: 2%;
+      width: 40%; }
+
+.babybear {
+  margin: 10px auto;
+  font-size: xx-small;
+  width: 80%; }
+  .babybear article {
+    display: inline-block;
+    margin: 10px 1.8% 10px 0;
+    width: 23%; }
+    .babybear article:nth-child(8n+8) {
+      margin-right: 0; }
+    .babybear article header {
+      padding: 5px 5px 10px; }
+    .babybear article img {
+      width: 100%; }
+
+.infant-bear {
+  padding: 10px 7.5%;
+  width: 85%; }
+  .infant-bear article {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    display: inline-block;
+    margin: 1% 1% 1% 0;
+    overflow: auto;
+    width: 12.28571%; }
+    .infant-bear article header {
+      padding: 5px; }
+    .infant-bear article h1 {
+      font-family: Museo-sans-condensed, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 1em;
+      margin: 0; }
+    .infant-bear article img {
+      width: 100%; }
+    .infant-bear article a {
+      color: #49413c;
+      text-decoration: none;
+      transition: all 0.2s ease; }
+      .infant-bear article a:hover {
+        color: #1063aa; }
+      .infant-bear article a:active {
+        color: #0c487b; }
+
+.byline {
+  font-style: italic; }
+
+/**** full post **** */
+.fullpost article , #comments{
+	  background: white;
+	  box-sizing: border-box;
+	  font-size: larger;
+	  margin: 0 auto;
+	  padding: 50px 10%;
+	  width: 80%; 
+}
+  .fullpost article .hed-link {
+    display: none; }
+  .fullpost article #feature-image {
+    max-width: 100%; }
+  .fullpost article .body .graf {
+    overflow: auto;
+    line-height: 1.7em; }
+    .fullpost article .body .graf img {
+      max-width: 50%;
+      padding: 10px; }
+
+.share {
+  margin: 20px 0; }
+
+.kicker {
+  border: 1px dashed #8dae32;
+  margin-top: 20px;
+  padding: 10px;
+  font-style: italic; }
+  .kicker img {
+    float: left;
+    width: 12%; 
+	 height: auto;
+    margin: 0 10px 0 0;}
+
+blockquote {
+  border-left: 3px solid #8dae32;
+  font-style: italic;
+  margin: 20px 0;
+  padding: 20px 0 20px 40px;
+  z-index: 1000; }
+
+.section-title {
+  margin: 0 auto;
+  padding: 50px 0 20px 0;
+  width: 100%; }
+
+/**** ui **** */
+input[type="text"], input[type="email"], input[type="url"]{
+  background: white;
+  border: 1px solid #8dae32;
+  box-sizing: border-box;
+  color: #0066c0;
+  display: block;
+  font-family: freight-text-pro, "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+  font-size: 1.3em;
+  font-style: italic;
+  margin: 0 0 10px 0;
+  height: 40px;
+  padding: 0 10px;
+  transition: all 0.2s ease;
+  width: 100%; }
+  input:focus {
+    /*border: 1px solid #0074d9;*/
+    outline: 0; }
+
+hr {
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: -1px; }
+.search-field{height: 30px;}
+.btn, #submit, .search-submit {
+  background: rgba(141, 174, 50, 0.7);
+  border-radius: 50px;
+  color: white;
+  font-family: Museo-Sans, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.1em;
+  font-weight: 100;
+  padding: 5px 10px; 
+  border: none;
+ }
+  .btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+    color: #8dae32; }
+
+.btn-aside {
+  position: absolute;
+  bottom: 80px; }
+
+.pagination {
+  margin: 20px auto;
+  text-align: center;
+  width: 80%; }
+  .pagination ul {
+    display: block;
+    padding: 0;
+    margin: 0; }
+    .pagination ul li {
+      display: inline-block;
+      list-style-type: none;
+      margin: 10px 2px;
+      padding: 0; }
+      .pagination ul li a {
+        background: #8dae32;
+        border-radius: 5px;
+        color: white;
+        padding: 5px 10px; }
+        .pagination ul li a:hover {
+          background: #0074d9; }
+        .pagination ul li a:active {
+          background: #0059a6; }
+
+.blackout {
+  background: rgba(109, 134, 39, 0.7);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+.modal {
+  background: white;
+  border-radius: 5px;
+  margin: 0 25%;
+  padding: 30px 5%;
+  position: absolute;
+  top: 100px;
+  width: 40%; }
+
+/**** helper **** */
+.pull-left {
+  float: left; }
+
+.pull-right {
+  float: right; }
+
+.clear {
+  clear: both; }
+
+.inline-block {
+  display: inline-block; }
+
+@media handheld and (max-width: 800px), screen and (max-device-width: 480px), screen and (max-width: 750px) {
+  .hide-small {
+    display: none; } }
+/**** state **** */
+.header-mobile {
+  display: none; }
+
+aside article .body, .babybear article .body {
+  display: none; }
+aside article .hed, .babybear article .hed {
+  display: none; }
+
+.papabear article .graf, .mamabear article .graf {
+  display: none; }
+.papabear article .hed, .mamabear article .hed {
+  display: none; }
+
+
+
+/* Chaul Mogra : category hovering */
+/*  entertainment   */
+article.category-entertainment a:hover {
+    color: #eee809; 
+}
+article.category-entertainment a:active {
+    color: white; 
+}
+/*.tile article.category-entertainment:hover {
+    border: 1px solid rgba(238, 232, 9, 0.8); 
+}*/
+article.category-entertainment:active {
+    background: #FDFCDA;
+    border: 1px solid #eee809; 
+}
+article.category-entertainment:active a, article.category-entertainment:active h1, article.category-entertainment:active h2, article.category-entertainment:active p {
+      color: #eee809; 
+}
+
+/*  life style   */
+article.category-lifestyle a:hover {
+    color: #f043a9; 
+}
+article.category-lifestyle a:active {
+    color: white; 
+}
+article.category-lifestyle:active {
+    background: #fde8f5;
+    border: 1px solid #f043a9; 
+}
+article.category-lifestyle:active a, article.category-lifestyle:active h1, article.category-lifestyle:active h2, article.category-lifestyle:active p {
+      color: #f043a9; 
+}
+
+/*  connected   */
+article.category-connected a:hover {
+    color: #82158c; 
+}
+article.category-connected a:active {
+    color: white; 
+}
+article.category-connected:active {
+    background: #F7DEF9;
+    border: 1px solid #82158c; 
+}
+.tile article.category-connected:active a, .tile article.category-connected:active h1, .tile article.category-connected:active h2, .tile article.category-connected:active p {
+      color: #82158c; 
+}
+
+/*  family   */
+article.category-family-kids a:hover {
+    color: #ffae00; 
+}
+article.category-family-kids a:active {
+    color: white; 
+}
+article.category-family-kids:active {
+    background: #FBEDCF;
+    border: 1px solid #ffae00; 
+}
+article.category-family-kids:active a, article.category-family-kids:active h1, article.category-family-kids:active h2, article.category-family-kids:active p {
+      color: #ffae00; 
+}
+
+/*  planning   */
+article.category-party-planning a:hover {
+    color: #1063aa; 
+}
+article.category-party-planning a:active {
+    color: white; 
+}
+article.category-party-planning:active {
+    background: #E7F2FB;
+    border: 1px solid #1063aa; 
+}
+article.category-party-planning:active a, article.category-party-planning:active h1, article.category-party-planning:active h2, article.category-party-planning:active p {
+      color: #1063aa; 
+}
+
+/*  food   */
+article.category-food a:hover {
+    color: #fa4414; 
+}
+article.category-food a:active {
+    color: white; 
+}
+article.category-food:active {
+    background: #F8D0C5;
+    border: 1px solid #fa4414; 
+}
+article.category-food:active a, article.category-food:active h1, article.category-food:active h2, article.category-food:active p {
+      color: #fa4414; 
+}
+
+/*  category-inside-house-party   */
+article.category-inside-house-party a:hover {
+    color: #ace100; 
+}
+article.category-inside-house-party a:active {
+    color: white; 
+}
+article.category-inside-house-party:active {
+    background: #EEFAC5;
+    border: 1px solid #ace100; 
+}
+article.category-inside-house-party:active a, article.category-inside-house-party:active h1, article.category-inside-house-party:active h2, article.category-inside-house-party:active p {
+      color: #ace100; 
+}
+
+.infant-bear{display: none;}
+
+/* background color of infant-bear */
+.infant-cat-plan{background: rgba(16,99,170,0.6);}
+.infant-cat-food{background: rgba(250,68,20,0.6);}
+.infant-cat-family{background: rgba(255,174,0,0.6);}
+.infant-cat-entertain{background: rgba(238,232,9,0.6);}
+.infant-cat-hp{background: rgba(172,225,0,0.6);}
+.infant-cat-connected{background: rgba(130,21,140,0.6);}
+.infant-cat-life{background: rgba(240,67,169,0.6);}
+
+.btn-aside-close{bottom: 42px; position: absolute;}
+
+textarea {
+  background: white;
+  border: 1px solid #8dae32;
+  box-sizing: border-box;
+  color: #0066c0;
+  display: block;
+  font-family: freight-text-pro, "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+  font-size: 1.3em;
+  font-style: italic;
+  margin: 0 0 10px 0;
+  height: 120px;
+  padding: 0 10px;
+  transition: all 0.2s ease;
+  width: 100%; }
+
+ .form-submit #submit{}
+ section img{max-width: 100%; height: auto;}
+/* #chaul mogra */
+
+
+
+@media handheld and (max-width: 800px), screen and (max-device-width: 480px), screen and (max-width: 750px) {
+  h1 {
+    font-size: xx-large; }
+
+  h2 {
+    font-size: large; }
+
+  .header-global, .nav-category, aside {
+    display: none; }
+
+  .header-mobile {
+    display: block;
+    background: #8dae32; }
+
+  .logo {
+    display: block;
+    margin: 0 auto;
+    padding: 20px 0;
+    width: 90%; }
+
+  .nav-main {
+    background: #49413c;
+    display: block;
+    margin: 0; }
+    .nav-main ul {
+      display: block;
+      width: 100%; }
+      .nav-main ul li {
+        display: block;
+        padding: 0; }
+        .nav-main ul li a {
+          border-top: 1px solid #2d2825;
+          display: block;
+          padding: 5%;
+          text-align: center; }
+
+  .papabear, .mamabear, .babybear {
+    margin: 0 auto;
+    padding: 0;
+    width: 90%; }
+    .papabear article, .mamabear article, .babybear article {
+      display: block;
+      margin: 20px 5%;
+      padding: 0;
+      width: 90%; }
+      .papabear article img, .mamabear article img, .babybear article img {
+        max-width: 40%;
+        padding-right: 2%;
+        float: left; }
+      .papabear article .hed, .papabear article .graf, .papabear article .byline, .mamabear article .hed, .mamabear article .graf, .mamabear article .byline, .babybear article .hed, .babybear article .graf, .babybear article .byline {
+        display: none; }
+      .papabear article .body, .mamabear article .body, .babybear article .body {
+        display: inline-block; }
+
+  .fullpost article {
+    width: 92%; 
+	padding: 20px 4%;}
+input[type="text"], input[type="email"], input[type="url"] {
+	padding: 0 2%;
+	width: 96%;
+}
+.modal{position: relative; padding: 30px 5%; width: 80%; margin: 0 auto;}
+    .fullpost article .body .graf img {
+      display: block;
+      float: none;
+      padding-left: 0;
+      padding-right: 0;
+      width: 100%;
+      max-width: 100%; } }
+@media handheld and (max-width: 500px), screen and (max-width: 500px) {
+  .papabear article img, .mamabear article img, .babybear article img {
+    float: none;
+    width: 100%;
+    max-width: 100%; }
+	}
